@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Logo from './Logo';
 import ItemGrid from './ItemGrid';
+
+import Cart from './Cart/Cart';
 import GlobalStyles from './GlobalStyles';
 
 const App = () => {
@@ -14,7 +16,9 @@ const App = () => {
       <ItemGridWrapper>
         <ItemGrid />
       </ItemGridWrapper>
-
+      <CartWrapper>
+        <Cart></Cart>
+      </CartWrapper>
       <GlobalStyles />
     </Wrapper>
   );
@@ -22,6 +26,7 @@ const App = () => {
 
 const Wrapper = styled.div`
   position: relative;
+  width: 80%;
 `;
 
 const Header = styled.header`
@@ -35,9 +40,15 @@ const ItemGridWrapper = styled.main`
 `;
 
 const CartWrapper = styled.div`
-  grid-area: sidebar;
+
   border-left: 3px dashed #ff406e;
   padding-left: 8px;
+
+  position: absolute;
+  top: 30px;
+  right: -220px;
+  height: 100%;
+  color: #fff;
 `;
 
 export default App;
